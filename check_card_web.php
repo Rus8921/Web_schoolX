@@ -23,7 +23,7 @@ class Validate
             // число корректно, если сумма равна 10
         if ($sum % 10 == 0)
         {
-            return 'valid card' . $emitent;
+            return 'valid card ' . $emitent;
         }
         else
         {
@@ -54,6 +54,6 @@ class Validate
 if(isset($_POST['card_number']))
 {
     $validate = new Validate();
-    $card_number = $_POST['card_number'];
+    $card_number = (int)$_POST['card_number'];
     echo $validate->is_valid_credit_card($card_number);
 }
